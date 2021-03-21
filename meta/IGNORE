@@ -1,2 +1,4 @@
 # Ignore by opt
 archive
+data
+wal

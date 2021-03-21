@@ -1,4 +1,6 @@
 # Ignore by git
 archive
 bin
+data
 docs
+wal

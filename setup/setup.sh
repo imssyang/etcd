@@ -20,7 +20,7 @@ init() {
 
   if [[ ! -d $HOME/data ]]; then
     mkdir $HOME/data
-    chmod 755 $HOME/data
+    chmod 700 $HOME/data
   fi
 
   if [[ ! -d $HOME/wal ]]; then
