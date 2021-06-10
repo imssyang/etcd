@@ -8,7 +8,7 @@ name: 'default'
 data-dir: /opt/etcd/data
 
 # Path to the dedicated wal directory.
-wal-dir: /opt/etcd/wal
+wal-dir: /opt/etcd/data/wal
 
 # Number of committed transactions to trigger a snapshot to disk.
 snapshot-count: 10000

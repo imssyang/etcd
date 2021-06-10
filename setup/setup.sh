@@ -19,13 +19,8 @@ init() {
   fi
 
   if [[ ! -d $HOME/data ]]; then
-    mkdir $HOME/data
+    mkdir -p $HOME/data/wal
     chmod 700 $HOME/data
-  fi
-
-  if [[ ! -d $HOME/wal ]]; then
-    mkdir $HOME/wal
-    chmod 755 $HOME/wal
   fi
 
   chown -R $USER:$GROUP $HOME
