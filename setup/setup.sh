@@ -6,6 +6,7 @@ USER=root
 HOME=/opt/$APP
 SYSD=/etc/systemd/system
 ETCDSERV=etcd.service
+ETCDKPSERV=etcdkeeper.service
 
 init() {
   egrep "^$GROUP" /etc/group >/dev/null
@@ -29,6 +30,12 @@ init() {
     ln -s $HOME/setup/$ETCDSERV $SYSD/$ETCDSERV
     systemctl enable $ETCDSERV
     echo "($APP) create symlink: $SYSD/$ETCDSERV --> $HOME/setup/$ETCDSERV"
+  fi
+
+  if [[ ! -s $SYSD/$ETCDKPSERV ]]; then
+    ln -s $HOME/setup/$ETCDKPSERV $SYSD/$ETCDKPSERV
+    systemctl enable $ETCDKPSERV
+    echo "($APP) create symlink: $SYSD/$ETCDKPSERV --> $HOME/setup/$ETCDKPSERV"
   fi
 
   systemctl daemon-reload
